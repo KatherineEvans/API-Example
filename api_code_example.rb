@@ -5,13 +5,13 @@ until continue == "N" do
 
   system "clear"
   puts "Welcome to the Dictionary App!"
-  puts "=========="
+  puts 
   print "Please enter your word: "
   word = gets.chomp
 
-  def_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=8dba4744d147470de953d228e1788d494480af9c8a004769a")
-  ex_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/examples?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=8dba4744d147470de953d228e1788d494480af9c8a004769a")
-  pro_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/pronunciations?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=8dba4744d147470de953d228e1788d494480af9c8a004769a")
+  def_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=")
+  ex_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/examples?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=")
+  pro_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/pronunciations?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=")
 
   word_information = def_response.body
   word_example = ex_response.body
@@ -23,11 +23,11 @@ until continue == "N" do
 
 
   puts "The definition of #{word} is:  #{definition}"
-  puts "=========="
+  puts 
   puts "Looking for an example? Glad you asked: #{example}"
-  puts "=========="
+  puts 
   puts "Here is how to pronounce the word: #{pronunciation}"
-  puts "=========="
+  puts 
 
 
   print "Would you like to look up another word? Enter Y or N: "
