@@ -13,6 +13,10 @@ until continue == "N" do
   ex_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/examples?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=")
   pro_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/pronunciations?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=")
 
+  def_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_KEY")
+  ex_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/examples?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_KEY")
+  pro_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/pronunciations?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_KEY")
+
   word_information = def_response.body
   word_example = ex_response.body
   word_pronunciation = pro_response.body
