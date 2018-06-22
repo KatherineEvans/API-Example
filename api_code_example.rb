@@ -9,9 +9,9 @@ until continue == "N" do
   print "Please enter your word: "
   word = gets.chomp
 
-  def_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=8dba4744d147470de953d228e1788d494480af9c8a004769a")
-  ex_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/examples?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=8dba4744d147470de953d228e1788d494480af9c8a004769a")
-  pro_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/pronunciations?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_key=8dba4744d147470de953d228e1788d494480af9c8a004769a")
+  def_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/definitions?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_KEY")
+  ex_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/examples?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_KEY")
+  pro_response = Unirest.get("https://api.wordnik.com/v4/word.json/#{word}/pronunciations?limit=200&includeRelated=false&useCanonical=false&includeTags=false&api_KEY")
 
   word_information = def_response.body
   word_example = ex_response.body
